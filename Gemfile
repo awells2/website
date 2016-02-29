@@ -44,7 +44,7 @@ gem 'will_paginate'
 gem 'utf8-cleaner'
 
 gem 'chartkick'
-
+gem 'puma'
 gem 'highcharts-rails','~>4.1.5'
 
 group :doc do
