@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dixon Lab Database!</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+  <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Dixon Lab Database</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      <li><a href="experiments">Experiment</a></li>
+      <li><a href ="faq">FAQ<a><li>
+      </ul>
+      </div>
+  
+  </div>
+  </nav>
+  {# specify content block so that other templates can use this template as a base #}
+  <div class="panel panel-default">
+  <div class="panel-body" style="padding:0 10% 20px 10%">
+  <div id="content">{% block content %}{% endblock %}</div>
+  </div></div>
+</body>
+</html>

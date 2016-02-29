@@ -1,0 +1,37 @@
+<%content_for :content do%>
+<h3> Search </h3> 
+
+<form method="POST" action="search" role="form" style="max-width:400px; width:100%">
+
+	<div class="alert alert-warning" role="alert"> <%= display_message(@message) %></div>
+
+	<div class="alert alert-info"><%= display_message(@message2) %></div>
+	<div class="form-group">
+	  <label for="expId">Experiment ID</label>
+	  <input type="text" class="form-control" id="expId" name="expId" value= "<%= @selectexp %>" />
+	</div>
+	<div class="form-group">
+	  <label for="cmpName">Compound Name</label>
+	  <input type="text" class="form-control" id="cmpName" name="cmpName" />
+	</div>
+	<div class="form-group">
+	  <label for="molecularWeight">Molecular Weight</label>
+	  <input type="text" name="molecularWeight" class="form-control" id="molecularWeight" />
+	</div>
+	<div class="form-group">
+	  <label for="casNum">CAS Number</label>
+	  <input type="text" name="casNum" class="form-control" id="casNum" />
+	</div>
+	<div class="form-group">
+	  <label for="targets">Targets</label>
+	  <input type="text" name="targets" class="form-control" id="targets" />
+	</div>
+	<div class="form-group">
+	  <label for="pathway">Pathway</label>
+	  <input type="text" name="pathway" class="form-control" id="pathway" />
+	</div>
+	
+	<div><input type="submit" value="Search Dixon Lab Database!" class="btn btn-primary" /></div>
+</form>
+<% end -%>
+<%render :file => 'layouts/application' %>

@@ -1,0 +1,144 @@
+<%content_for :content do%>
+<h1>Data Visualization</h1>
+<!--<form class="pure-form pure-form-stacked" action="run_r_script" method="post">-->
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-3">
+       
+            <h2><%=@cmpName1%></h2>
+                <h5> CAS Number: <%= @casNumber1 %> <br>
+                     Molecular Weight: <%= @molecularWeight1 %> g/mol<br>
+                     Form: <%= @form1 %> <br>
+                     Target(s): <%= @targetsEdited1 %> <br>
+                     Molecule Type: <%= @moleculeType1 %> <br>
+                     Pathway: <%= @pathway1 %><br>
+                     URL: <a href = <%= @url1 %> target = "_blank">Click here for more information on <%= @cmpName1 %></a>
+                </h5>
+
+            <div class="form-group">
+                <input type="hidden" class="form-control" id="expId" name="expId" value= "<%= @selectexp %>" />
+            </div>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> 
+            <script src="http://code.highcharts.com/highcharts.js"></script>
+            <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+        </div>    
+        <div class = "col-md-3">
+             <h2><%=@cmpName2%></h2>
+                <h5> CAS Number: <%= @casNumber2 %> <br>
+                     Molecular Weight: <%= @molecularWeight2 %> g/mol<br>
+                     Form: <%= @form2 %> <br>
+                     Target(s): <%= @targetsEdited2 %> <br>
+                     Molecule Type: <%= @moleculeType2 %> <br>
+                     Pathway: <%= @pathway2 %><br>
+                     URL: <a href = <%= @url2 %> target = "_blank">Click here for more information on <%= @cmpName2 %></a>
+                </h5>
+        </div>
+         <div class = "col-md-3">
+             <h2><%=@cmpName3%></h2>
+                <h5> CAS Number: <%= @casNumber3 %> <br>
+                     Molecular Weight: <%= @molecularWeight3 %> g/mol<br>
+                     Form: <%= @form3 %> <br>
+                     Target(s): <%= @targetsEdited3 %> <br>
+                     Molecule Type: <%= @moleculeType3 %> <br>
+                     Pathway: <%= @pathway3 %><br>
+                     URL: <a href = <%= @url3 %> target = "_blank">Click here for more information on <%= @cmpName3 %></a>
+                </h5>
+        </div>
+        <div class = "col-md-3">
+             <h2><%=@cmpName4%></h2>
+                <h5> CAS Number: <%= @casNumber4 %> <br>
+                     Molecular Weight: <%= @molecularWeight4 %> g/mol<br>
+                     Form: <%= @form4 %> <br>
+                     Target(s): <%= @targetsEdited4 %> <br>
+                     Molecule Type: <%= @moleculeType4 %> <br>
+                     Pathway: <%= @pathway4 %><br>
+                     URL: <a href = <%= @url4 %> target = "_blank">Click here for more information on <%= @cmpName4 %></a>
+                </h5>
+        </div>
+            <script>
+            $(function(){
+                i = 0;
+                <% @map1.each do |name, arr| %>
+                    graphTitle = String('<%= name %>')
+                    dataVector = <%= arr %>
+                    dataVector2 = <%= @map2[name] %>
+                    dataVector3 = <%= @map3[name] %>
+                    dataVector4 = <%= @map4[name] %>
+                    containerNum = 'container' + i
+                    yLabel = 'Count (1/mm^2)'
+                    name1 = String('<%= @cmpName1 %>')
+                    name2 = String('<%= @cmpName2 %>')
+                    name3 = String('<%= @cmpName3 %>')
+                    name4 = String('<%= @cmpName4 %>')
+                    if(graphTitle == 'Confluency'){
+                        yLabel = 'Percent'
+                    }
+                    if(graphTitle == 'CLE Score'){
+                        yLabel = 'Score'
+                    }
+                    var chart1 =  new Highcharts.Chart({  
+                        chart: {
+                            renderTo: containerNum,
+                            backgroundColor: {
+                                linearGradient: [0, 0, 500, 500],
+                                stops: [
+                                    [0, 'rgb(255, 255, 255)'],
+                                    [1, 'rgb(240, 240, 255)']
+                    ]           
+                            },
+                            borderWidth: 2,
+                            plotBackgroundColor: 'rgba(255, 255, 255, .9)',
+                            plotShadow: true,
+                            plotBorderWidth: 1
+                        },
+                        title : {
+                            text : graphTitle,
+                            x: -20
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: yLabel
+                            },
+                            plotLines: [{
+                                value: 0,
+                                width: 1,
+                                color: '#808080'
+                            }]
+                        },
+                        xAxis: {
+                            title :{
+                                text: 'Time (Hours)'
+                            },
+                            categories: <%= @timeArray1.to_json%>
+                        },
+                        series: [{
+                            name: name1,
+                            data: dataVector
+                        }],
+                    });
+                    i = i + 1
+                    chart1.addSeries({name: name2, data: dataVector2});
+                    chart1.addSeries({name: name3, data: dataVector3});
+                    chart1.addSeries({name: name4, data: dataVector4});
+                <% end %>
+
+            });
+            </script>
+
+
+
+            </head>
+            <body>
+    </div>
+</div>
+ <div id="container0" style="min-width: 575px; height: 450px; margin: 0 auto"></div>
+<br></br>
+<div id="container1" style="min-width: 575px; height: 450px; margin: 0 auto"></div>
+<br></br>
+<div id="container2" style="min-width: 575px; height: 450px; margin: 0 auto"></div>
+<br></br>
+<div id="container3" style="min-width: 575px; height: 450px; margin: 0 auto"></div>
+
+<% end %>

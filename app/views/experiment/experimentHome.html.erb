@@ -1,0 +1,26 @@
+<%content_for :content do%>
+<center>
+<h3>Welcome to the DeathSeer!</h3>
+<br>
+
+<form method="POST" action="experiments" style="max-width:400px; width:100%">
+	<%= @mexpMessage %>
+	<div class="alert alert-warning" style = "color:black" align = "left"><%= "To begin browsing DeathSeer, click on one of the experiments listed below.  You can find information about each experiment listed in the blue boxes below each experiment link.  To download the raw data for a given experiment, click the link next to the 'Click to download' field." %></div>
+	<h4> List of Experiments: </h4> 
+	<% @experimentList.each do |e| %>
+		<%= link_to e.title, search_path(:selectexp => e.expId) %>
+		</a>
+		<div class="alert alert-info">
+			<p style = "color:black"> Researcher: <%=e.researcher %> </p>
+			<p style = "color:black">Title: <%=e.title %> </p> 
+			<p style = "color:black"> Description: <%= e.descripton%></p>
+			<p style = "color:black"> Cell Line: <%= e.cellLine %></p>
+			<p style = "color:black">Click to download:  <%= link_to e.excelName, download_xls_path(e.excelName) %> </p>
+		</div>
+
+	<%end %>
+	
+</form>
+</center>
+<% end -%>
+<%render :file => 'layouts/application' %>

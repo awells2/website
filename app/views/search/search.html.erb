@@ -1,0 +1,166 @@
+<%content_for :content do%>
+<form method="POST" action="search" role="form" style="max-width:1000px; width:100%" onsubmit = " return checkvalue()">
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script type = "text/javascript">
+function checkvalue() { 
+    var count = 0;
+    var mystring1 = document.getElementById('cmpName1').value; 
+    if(mystring1.match(/\S/)) {
+        count = count + 1;
+    }
+    var mystring2 = document.getElementById('cmpName2').value; 
+    if(mystring2.match(/\S/)) {
+        count = count + 1;
+    }
+    var mystring3 = document.getElementById('cmpName3').value; 
+    if(mystring3.match(/\S/)) {
+        count = count + 1;
+    }
+    var mystring4 = document.getElementById('cmpName4').value; 
+    if(mystring4.match(/\S/)){ 
+        count = count + 1;
+    }
+    if(count == 0){
+    	alert("Please enter at least one compound");
+    	return false;
+    }
+    if(count == 1 && !mystring1.match(/\S/)){
+    	alert("Please fill out the compound fields in order (1)");
+    	return false;
+    }
+    if(count == 2 && (!mystring1.match(/\S/) || !mystring2.match(/\S/))){
+    	alert("Please fill out the compound fields in order (2)");
+    	return false;
+    }
+    if(count == 3 && (!mystring1.match(/\S/) || !mystring2.match(/\S/) || !mystring3.match(/\S/))){
+    	alert("Please fill out the compound fields in order (3)");
+    	return false;
+    } 
+}
+</script>
+
+<div class = "container">
+	<div class = "row">
+		<div class = "col-md-4">
+
+			<h3> Search </h3> 
+
+			<div class="alert alert-warning" style = "color:black">Enter search criteria to browse the database.  Clicking on a "Target" or "Pathway" link restrict the compounds that appear in the first search parameter column to those with the corresponding attribute.  To reset these search criteria, click "Clear Search Criteria".  To clear all the textboxes containing compound names, click the "Clear All Compounds" link below the "Compound 4" field. </div>
+			<div class="form-group">
+	  			<input type="hidden" class="form-control" id="expId" name="expId" value= "<%= @selectexp %>" />
+			</div>
+			<div class = "text"> Current Search Criteria:</div>
+			<div class="text">
+	  			<label for="targets">Targets: <%= @target %></label>
+	  			<input type="hidden" class="form-control" id="target" name="target" value = "<%= @target %>" />
+
+			</div>
+			<div class = "text">
+	  			<label for="pathway">Pathway: <%= @pathway %></label>
+	  			<input type="hidden" class="form-control" id="pathway" name="pathway" value = "<%= @pathway %>" />
+
+			</div>
+			<div class = "text">
+				<%= link_to "Clear Search Criteria", search_path(:cmpName => "",:target => "",:pathway => "",:selectexp => @selectexp,:cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4)%>
+			</div>
+			<br>
+			<p> Enter up to 4 compounds: </p>
+		
+			<% if @message != "" %>
+				<div class="alert alert-warning"><%= @message %></div>
+			<% end %>
+			<div id="oneCompound">
+				<div class="form-group">
+	  				<label for="cmpName1">Compound 1:</label>
+	  				<input type="text" class="form-control" id="cmpName1" name="cmpName1" value = "<%= @cmpName1 %>"/>
+				</div>
+			</div>
+			<div class = "text">
+				<%= link_to "Clear Compound 1", search_path(:target => @target,:pathway => @pathway,:selectexp => @selectexp,:cmpName1 => "", :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4)%>
+			</div>
+			<br>
+			<div id="twoCompounds">
+				<div class="form-group">
+	  				<label for="cmpName2">Compound 2:</label>
+	  				<input type="text" class="form-control" id="cmpName2" name="cmpName2" value = "<%= @cmpName2 %>"/>
+				</div>
+			</div>
+			<div class = "text">
+				<%= link_to "Clear Compound 2", search_path(:target => @target,:pathway => @pathway,:selectexp => @selectexp,:cmpName1 => @cmpName1, :cmpName2 => "", :cmpName3 => @cmpName3, :cmpName4 => @cmpName4)%>
+			</div>
+			<br>
+			<div id="fourCompounds">
+				<div class="form-group">
+	  				<label for="cmpName3">Compound 3:</label>
+	  				<input type="text" class="form-control" id="cmpName3" name="cmpName3" value = "<%= @cmpName3 %>"/>
+				</div>
+				<div class = "text">
+				<%= link_to "Clear Compound 3", search_path(:target => @target,:pathway => @pathway,:selectexp => @selectexp,:cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => "", :cmpName4 => @cmpName4)%>
+				</div>
+			<br>
+				<div class="form-group">
+	  				<label for="cmpName4">Compound 4:</label>
+	  				<input type="text" class="form-control" id="cmpName4" name="cmpName4" value = "<%= @cmpName4 %>"/>
+				</div>
+			</div>
+			<div class = "text">
+				<%= link_to "Clear Compound 4", search_path(:target => @target,:pathway => @pathway,:selectexp => @selectexp,:cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => "")%>
+			</div>
+			<br>
+			<div class = "text">
+				<%= link_to "Clear All Compounds", search_path(:cmpName => "",:target => @target,:pathway => @pathway,:selectexp => @selectexp,:cmpName1 => "", :cmpName2 => "", :cmpName3 => "", :cmpName4 => "")%>
+			</div>
+			<br>
+  			<div>
+  				<%= check_box_tag 'axisFormat', 'yes', false %> Graph identical markers on same axis? (Only applies if two or more compounds are selected)
+  			</div>
+
+  			<br>
+  			<br>
+		<div>
+			<input type="submit" value="Search Dixon Lab Database!" class="btn btn-primary"/>
+		</div>
+	</div>
+		<h3>Search Parameters </h3>
+		<div class = "col-md-8">
+			<div class = "col-md-5"> List of Compound Names: </div>
+			<div class = "col-md-4"> List of Targets: </div>
+			<div class = "col-md-3"> List of Pathways: </div>
+		</div>
+		<br>
+		<br>
+		<div class = "col-md-8">
+			<div class = "col-md-5" style = "overflow:scroll; height: 850px">
+				<% iCount = 1 %>
+				<% @info.each do |c| %>
+					(<%= iCount%>)&nbsp;&nbsp;<%= link_to c, search_path(:currCmpName =>c,:target =>@target,:pathway => @pathway, :selectexp => @selectexp, :cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4) %><br>
+					<% iCount = iCount + 1 %>
+				<% end %>
+			</div>
+			<div class = "col-md-4" style = "overflow:scroll; height: 850px">
+				<% tCount = 1 %>
+				<% @targetsParsed.each do |t| %>
+					(<%= tCount %>)&nbsp;&nbsp; <%= link_to t, search_path(:target =>t,:pathway => @pathway, :selectexp => @selectexp, :cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4) %><br>
+					<% tCount = tCount + 1 %>
+				<% end %>
+			</div>	
+			<div class = "col-md-3">
+				<% pCount = 1 %>
+					<% @pathways.each do |p| %>
+						(<%= pCount %>)&nbsp;&nbsp;<%= link_to p, search_path(:pathway =>p, :target => @target, :selectexp => @selectexp, :cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4) %><br>
+						<% pCount = pCount + 1 %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</form>
+
+
+<% end %>
+
+<%render :file => 'layouts/application' %>
