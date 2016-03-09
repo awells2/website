@@ -1,6 +1,6 @@
 class CreateInfos < ActiveRecord::Migration
   def change
-    create_table :infos do |t|
+    create_table :experimentInfo do |t|
 
       t.timestamps
     end
