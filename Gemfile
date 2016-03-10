@@ -37,7 +37,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 #allow for R scripts to be used in rails
-gem 'rinruby'
+#gem 'rinruby'
 
 #excel data
 gem 'spreadsheet'
