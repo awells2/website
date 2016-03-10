@@ -1,4 +1,4 @@
-class experimentInfo < ActiveRecord::Base
+class ExperimentInfo < ActiveRecord::Base
 	self.table_name = "Experiments"
 
 end
