@@ -1,3 +1,3 @@
 class Experiment < ActiveRecord::Base
-	self.table_name = "experimentInfo"
+	self.table_name = "experimentinfo"
 end
