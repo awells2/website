@@ -1,3 +1,3 @@
 class Sytox < ActiveRecord::Base
-	self.table_name = "sytoxGreen"
+	self.table_name = "sytoxgreen"
 end

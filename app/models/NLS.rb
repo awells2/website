@@ -1,3 +1,3 @@
 class NLS < ActiveRecord::Base
-	self.table_name = "NLS"
+	self.table_name = "nls"
 end
