@@ -1,6 +1,6 @@
 class CreateExperimentInfo < ActiveRecord::Migration
 	def change
-		create_table: experimentInfo do |t|
+		create_table: experimentinfo do |t|
 			t.integer :expId
 			t.string :expType
 			t.string :researcher
