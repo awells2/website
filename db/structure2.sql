@@ -5,7 +5,7 @@ drop table if exists NLS;
 drop table if exists mCherryRed;
 drop table if exists experimentInfo;
 
-create table experimentInfo (
+create table experimentinfo (
 expid int,
 exptype text,
 researcher text,
