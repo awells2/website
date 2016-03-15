@@ -1,7 +1,7 @@
 class ExperimentController < ApplicationController
 
 	def experimentHome
-
+		return
 		@experimentList = Experiment.where('expId != ?', 'expId')
 		
 		render "experiment/experimentHome"
