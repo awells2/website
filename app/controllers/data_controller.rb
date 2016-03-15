@@ -57,8 +57,6 @@ class DataController < ApplicationController
 				case currMarker1
 				when 'Confluency'
 					dataString1 = Confluence.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>")
-					print("HERE DSTRING")
-					print(dataString1)
 				when 'Sytox Green'
 					dataString1 = Sytox.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>")
 				when 'NLS'
@@ -86,7 +84,8 @@ class DataController < ApplicationController
 				tempArr1.shift
 				@map1[@markers1.split(',')[j]] = tempArr1
 			end
-			
+			print("HERE")
+			print(@map1)
 			#respond_to do |format|
 			#	format.html
 			#	format.csv {send_data @map1.to_csv}
