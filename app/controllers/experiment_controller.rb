@@ -2,9 +2,9 @@ class ExperimentController < ApplicationController
 
 	def experimentHome
 	
-		#@experimentList = Experiment.where('expId != ?', 'expId')
+		@experimentList = Experiment.where('expId != ?', 'expId')
 		
-		#render "experiment/experimentHome"
+		render "experiment/experimentHome"
 	end
 
 	def xls
