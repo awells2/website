@@ -20,51 +20,51 @@ excelname text
 
 create table info (
 num int,
-expId int,
-compoundName text,
-catalogNo text,
-rackNumber text,
-molecularWeight real,
-casNumber text,
+expid text,
+compoundname text,
+catalogno text,
+racknumber text,
+molecularweight text,
+casnumber text,
 form text,
-targetsSupplied text,
-targetsEdited text,
-moleculeType text,
-targetSpecies text,
-targetType text,
+targetssupplied text,
+targetsedited text,
+moleculetype text,
+targetspecies text,
+targettype text,
 information text,
 smiles text,
-solubility int,
+solubility text,
 url text,
 pathway text,
-plate int,
+plate text,
 position text
 );
 
 create table confluency (
 num int,
-expId int,
-compoundName text,
+expid text,
+compoundname text,
 data text
 );
 
 create table sytoxGreen (
 num int,
-expId int,
-compoundName text,
+expId text,
+compoundname text,
 data text
 );
 
 create table NLS (
 num int,
-expId int,
-compoundName text,
+expId text,
+compoundname text,
 data text
 );
 
 create table mCherryRed(
 num int,
-expId int,
-compoundName text,
+expId text,
+compoundname text,
 data text
 );

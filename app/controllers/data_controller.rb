@@ -27,14 +27,14 @@ class DataController < ApplicationController
 
     	if(@cmpName1 != nil and @cmpName1 != "")
 
-			@casNumber1 = Info.where('compoundName = ? and expId = ?', @cmpName1, 1).pluck(:casNumber)[0]
-			@molecularWeight1 = Info.where('compoundName = ? and expId = ?', @cmpName1, 1).pluck(:molecularWeight)[0]
-			@form1 = Info.where('compoundName = ? and expId = ?', @cmpName1, 1).pluck(:form)[0]
-			@targetsEdited1 = Info.where('compoundName = ? and expId = ?', @cmpName1, 1).pluck(:targetsEdited)[0]
-			@moleculeType1 = Info.where('compoundName = ? and expId = ?', @cmpName1, 1).pluck(:moleculeType)[0]
-			@information1 = Info.where('compoundName = ? and expId = ?', @cmpName1, 1).pluck(:information)[0]
-			@pathway1 = Info.where('compoundName = ? and expId = ?', @cmpName1, 1).pluck(:pathway)[0]
-			@url1 = Info.where('compoundName = ? and expId = ?', @cmpName1, 1).pluck(:url)[0]
+			@casNumber1 = Info.where('compoundName = ? and expId = ?', @cmpName1, "2").pluck(:casNumber)[0]
+			@molecularWeight1 = Info.where('compoundName = ? and expId = ?', @cmpName1, "2").pluck(:molecularWeight)[0]
+			@form1 = Info.where('compoundName = ? and expId = ?', @cmpName1, "2").pluck(:form)[0]
+			@targetsEdited1 = Info.where('compoundName = ? and expId = ?', @cmpName1, "2").pluck(:targetsEdited)[0]
+			@moleculeType1 = Info.where('compoundName = ? and expId = ?', @cmpName1, "2").pluck(:moleculeType)[0]
+			@information1 = Info.where('compoundName = ? and expId = ?', @cmpName1, "2").pluck(:information)[0]
+			@pathway1 = Info.where('compoundName = ? and expId = ?', @cmpName1, "2").pluck(:pathway)[0]
+			@url1 = Info.where('compoundName = ? and expId = ?', @cmpName1, "2").pluck(:url)[0]
 
 			@markers1 = Experiment.where('expId = ?', @expId).pluck(:markers).join(",")
 			@markerList1 = @markers1.split(',')

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+heroku pg:reset DATABASE --confirm sheltered-beach-44318
+heroku pg:psql -a sheltered-beach-44318 <db/structure2.sql
+heroku pg:psql << EOF
+\copy experimentinfo FROM 'db/exp2/expInfo2.csv' DELIMITER ',' CSV;
+\copy info FROM 'db/exp2/compoundInfoNew2.csv' DELIMITER ',' CSV;
+\copy NLS FROM 'db/exp2/NLSInfoNew2.csv' DELIMITER ',' CSV;
+\copy sytoxgreen FROM 'db/exp2/SytoxInfoNew2.csv' DELIMITER ',' CSV;
+\copy confluency FROM 'db/exp2/confluenceInfoNew2.csv' DELIMITER ',' CSV;
+\dt
+EOF
