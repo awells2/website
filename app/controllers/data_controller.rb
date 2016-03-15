@@ -51,18 +51,18 @@ class DataController < ApplicationController
 
 			#@array1 = Array.new(Array.new(numTimePoints1))
 			@array1 = Array.new
-			
+	
 			(0..@numMarkers1).each do |i|
 				currMarker1 = @markers1.split(',')[i]
 				case currMarker1
 				when 'Confluency'
-					dataString1 = Confluence.where('compoundName = ? and expId = ?', @cmpName1, @expId).pluck(:data).join("<>")
+					dataString1 = Confluence.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>")
 				when 'Sytox Green'
-					dataString1 = Sytox.where('compoundName = ? and expId = ?', @cmpName1, @expId).pluck(:data).join("<>")
+					dataString1 = Sytox.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>")
 				when 'NLS'
-					dataString1 = NLS.where('compoundName = ? and expId = ?', @cmpName1, @expId).pluck(:data).join("<>")
+					dataString1 = NLS.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>")
 				when 'mCherry'
-					dataString1 = Cherry.where('compoundName = ? and expId = ?', @cmpName1, @expId).pluck(:data).join("<>")
+					dataString1 = Cherry.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>")
 				end
 			
 				innerArray1 = Array.new(numTimePoints1)
@@ -73,7 +73,7 @@ class DataController < ApplicationController
 			end
 			marker_array = @markers1.split(',')
 			if (marker_array.include?('NLS') and marker_array.include?('Sytox Green'))
-				cle_scores_array = calculate_cle_score(Sytox.where('compoundName = ? and expId = ?', @cmpName1, @expId).pluck(:data).join("<>"),NLS.where('compoundName = ? and expId = ?', @cmpName1, @expId).pluck(:data).join("<>"))
+				cle_scores_array = calculate_cle_score(Sytox.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>"),NLS.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>"))
 				@array1[@array1.length] = cle_scores_array
 				@markers1 = @markers1 + ",CLE Score"
 				@numMarkers1 = @numMarkers1 + 1
