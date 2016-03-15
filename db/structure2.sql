@@ -6,15 +6,15 @@ drop table if exists mCherryRed;
 drop table if exists experimentInfo;
 
 create table experimentInfo (
-expId int,
-expType text,
+expid int,
+exptype text,
 researcher text,
 descripton text,
 title text,
-timeFormat text,
+timeformat text,
 markers text,
-cellLine text,
-excelName text
+cellline text,
+excelname text
 );
 
 
