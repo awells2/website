@@ -1,4 +1,4 @@
-ghcharts JS v4.1.7 (2015-06-26)
+highcharts JS v4.1.7 (2015-06-26)
 
  (c) 2009-2014 Torstein Honsi
 

@@ -12,6 +12,8 @@ gem 'rails', '4.0.0'
 gem 'pg'
 #end
 
+gem 'lazy_high_charts'
+
 group :production do
 	gem 'rails_12factor'
 end
