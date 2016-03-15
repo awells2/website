@@ -56,8 +56,9 @@ class DataController < ApplicationController
 				currMarker1 = @markers1.split(',')[i]
 				case currMarker1
 				when 'Confluency'
-					print("HERE")
 					dataString1 = Confluence.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>")
+					print("HERE DSTRING")
+					print(dataString1)
 				when 'Sytox Green'
 					dataString1 = Sytox.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>")
 				when 'NLS'
