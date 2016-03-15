@@ -1,0 +1,101 @@
+2016-03-15T05:33:16.813191+00:00 app[web.1]: LINE 1: SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expI...
+2016-03-15T05:33:16.813192+00:00 app[web.1]:                                        ^
+2016-03-15T05:33:16.813193+00:00 app[web.1]: : SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expId != 'expId')
+2016-03-15T05:33:16.813801+00:00 app[web.1]:   Rendered main/experimentHome.html.erb within layouts/application (2.6ms)
+2016-03-15T05:33:16.813872+00:00 app[web.1]: Completed 500 Internal Server Error in 4ms
+2016-03-15T05:33:16.816093+00:00 app[web.1]: 
+2016-03-15T05:33:16.816105+00:00 app[web.1]: ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "experimentInfo" does not exist
+2016-03-15T05:33:16.816123+00:00 app[web.1]: LINE 1: SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expI...
+2016-03-15T05:33:16.816124+00:00 app[web.1]:                                        ^
+2016-03-15T05:33:16.816126+00:00 app[web.1]:      7: 	<%= @mexpMessage %>
+2016-03-15T05:33:16.816125+00:00 app[web.1]: : SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expId != 'expId')):
+2016-03-15T05:33:16.816127+00:00 app[web.1]:      8: 	<div class="alert alert-warning" style = "color:black" align = "left"><%= "To begin browsing the database, click on one of the experiments listed below.  You can find information about each experiment listed in the blue boxes below each experiment link.  To download the raw data for a given experiment, click the link next to the 'Click to download' field." %></div>
+2016-03-15T05:33:16.816128+00:00 app[web.1]:      9: 	<h4> List of Experiments: </h4> 
+2016-03-15T05:33:16.816128+00:00 app[web.1]:     10: 	<% @experimentList.each do |e| %>
+2016-03-15T05:33:16.816130+00:00 app[web.1]:     12: 		</a>
+2016-03-15T05:33:16.816129+00:00 app[web.1]:     11: 		<%= link_to e.title, search_path(:selectexp => e.expId) %>
+2016-03-15T05:33:16.816131+00:00 app[web.1]:     13: 		<div class="alert alert-info">
+2016-03-15T05:33:16.816132+00:00 app[web.1]:   app/views/main/experimentHome.html.erb:10:in `block in _app_views_main_experiment_ome_html_erb___1511755932124521423_70162519516940'
+2016-03-15T05:33:16.816133+00:00 app[web.1]:   app/views/main/experimentHome.html.erb:1:in `_app_views_main_experiment_ome_html_erb___1511755932124521423_70162519516940'
+2016-03-15T05:33:16.816134+00:00 app[web.1]:   app/controllers/main_controller.rb:6:in `experimentHome'
+2016-03-15T05:33:16.816135+00:00 app[web.1]: 
+2016-03-15T05:33:16.816135+00:00 app[web.1]: 
+2016-03-15T05:33:16.805861+00:00 heroku[router]: at=info method=GET path="/" host=sheltered-beach-44318.herokuapp.com request_id=9b7cfa64-a230-4077-b676-96f407bda79a fwd="128.12.253.5" dyno=web.1 connect=1ms service=34ms status=500 bytes=1458
+2016-03-15T05:38:27.339628+00:00 heroku[router]: at=info method=GET path="/" host=sheltered-beach-44318.herokuapp.com request_id=3a672911-5097-46ba-8920-7a307caeef2e fwd="128.12.253.5" dyno=web.1 connect=1ms service=32ms status=500 bytes=1458
+2016-03-15T05:38:27.321501+00:00 app[web.1]: Started GET "/" for 128.12.253.5 at 2016-03-15 05:38:27 +0000
+2016-03-15T05:38:27.343748+00:00 app[web.1]: Processing by MainController#experimentHome as HTML
+2016-03-15T05:38:27.347286+00:00 app[web.1]: PG::UndefinedTable: ERROR:  relation "experimentInfo" does not exist
+2016-03-15T05:38:27.347296+00:00 app[web.1]: LINE 1: SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expI...
+2016-03-15T05:38:27.347298+00:00 app[web.1]:                                        ^
+2016-03-15T05:38:27.347299+00:00 app[web.1]: : SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expId != 'expId')
+2016-03-15T05:38:27.348006+00:00 app[web.1]:   Rendered main/experimentHome.html.erb within layouts/application (3.7ms)
+2016-03-15T05:38:27.348212+00:00 app[web.1]: Completed 500 Internal Server Error in 4ms
+2016-03-15T05:38:27.350701+00:00 app[web.1]: 
+2016-03-15T05:38:27.350712+00:00 app[web.1]: ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "experimentInfo" does not exist
+2016-03-15T05:38:27.350712+00:00 app[web.1]: LINE 1: SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expI...
+2016-03-15T05:38:27.350713+00:00 app[web.1]:                                        ^
+2016-03-15T05:38:27.350714+00:00 app[web.1]: : SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expId != 'expId')):
+2016-03-15T05:38:27.350716+00:00 app[web.1]:      7: 	<%= @mexpMessage %>
+2016-03-15T05:38:27.350718+00:00 app[web.1]:      8: 	<div class="alert alert-warning" style = "color:black" align = "left"><%= "To begin browsing the database, click on one of the experiments listed below.  You can find information about each experiment listed in the blue boxes below each experiment link.  To download the raw data for a given experiment, click the link next to the 'Click to download' field." %></div>
+2016-03-15T05:38:27.350719+00:00 app[web.1]:     10: 	<% @experimentList.each do |e| %>
+2016-03-15T05:38:27.350718+00:00 app[web.1]:      9: 	<h4> List of Experiments: </h4> 
+2016-03-15T05:38:27.350720+00:00 app[web.1]:     11: 		<%= link_to e.title, search_path(:selectexp => e.expId) %>
+2016-03-15T05:38:27.350720+00:00 app[web.1]:     12: 		</a>
+2016-03-15T05:38:27.350721+00:00 app[web.1]:     13: 		<div class="alert alert-info">
+2016-03-15T05:38:27.350722+00:00 app[web.1]:   app/views/main/experimentHome.html.erb:10:in `block in _app_views_main_experiment_ome_html_erb___1511755932124521423_70162519291600'
+2016-03-15T05:38:27.350724+00:00 app[web.1]:   app/views/main/experimentHome.html.erb:1:in `_app_views_main_experiment_ome_html_erb___1511755932124521423_70162519291600'
+2016-03-15T05:38:27.350725+00:00 app[web.1]:   app/controllers/main_controller.rb:6:in `experimentHome'
+2016-03-15T05:38:27.350725+00:00 app[web.1]: 
+2016-03-15T05:38:27.350726+00:00 app[web.1]: 
+2016-03-15T05:49:37.158759+00:00 heroku[router]: at=info method=GET path="/" host=sheltered-beach-44318.herokuapp.com request_id=fe636ea4-c661-4ca3-b5b9-3b8e809f9a42 fwd="128.12.253.5" dyno=web.1 connect=2ms service=14ms status=500 bytes=1458
+2016-03-15T05:49:37.157464+00:00 app[web.1]: Started GET "/" for 128.12.253.5 at 2016-03-15 05:49:37 +0000
+2016-03-15T05:49:37.158827+00:00 app[web.1]: Processing by MainController#experimentHome as HTML
+2016-03-15T05:49:37.162467+00:00 app[web.1]: PG::UndefinedTable: ERROR:  relation "experimentInfo" does not exist
+2016-03-15T05:49:37.162475+00:00 app[web.1]: LINE 1: SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expI...
+2016-03-15T05:49:37.162477+00:00 app[web.1]:                                        ^
+2016-03-15T05:49:37.162478+00:00 app[web.1]: : SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expId != 'expId')
+2016-03-15T05:49:37.163383+00:00 app[web.1]:   Rendered main/experimentHome.html.erb within layouts/application (3.6ms)
+2016-03-15T05:49:37.163562+00:00 app[web.1]: Completed 500 Internal Server Error in 5ms
+2016-03-15T05:49:37.166125+00:00 app[web.1]: 
+2016-03-15T05:49:37.166138+00:00 app[web.1]: ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "experimentInfo" does not exist
+2016-03-15T05:49:37.166139+00:00 app[web.1]: LINE 1: SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expI...
+2016-03-15T05:49:37.166139+00:00 app[web.1]:                                        ^
+2016-03-15T05:49:37.166140+00:00 app[web.1]: : SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expId != 'expId')):
+2016-03-15T05:49:37.166141+00:00 app[web.1]:      7: 	<%= @mexpMessage %>
+2016-03-15T05:49:37.166144+00:00 app[web.1]:      9: 	<h4> List of Experiments: </h4> 
+2016-03-15T05:49:37.166160+00:00 app[web.1]:     10: 	<% @experimentList.each do |e| %>
+2016-03-15T05:49:37.166161+00:00 app[web.1]:     11: 		<%= link_to e.title, search_path(:selectexp => e.expId) %>
+2016-03-15T05:49:37.166161+00:00 app[web.1]:     12: 		</a>
+2016-03-15T05:49:37.166144+00:00 app[web.1]:      8: 	<div class="alert alert-warning" style = "color:black" align = "left"><%= "To begin browsing the database, click on one of the experiments listed below.  You can find information about each experiment listed in the blue boxes below each experiment link.  To download the raw data for a given experiment, click the link next to the 'Click to download' field." %></div>
+2016-03-15T05:49:37.166162+00:00 app[web.1]:     13: 		<div class="alert alert-info">
+2016-03-15T05:49:37.166163+00:00 app[web.1]:   app/views/main/experimentHome.html.erb:10:in `block in _app_views_main_experiment_ome_html_erb___1511755932124521423_70162519291600'
+2016-03-15T05:49:37.166164+00:00 app[web.1]:   app/views/main/experimentHome.html.erb:1:in `_app_views_main_experiment_ome_html_erb___1511755932124521423_70162519291600'
+2016-03-15T05:49:37.166165+00:00 app[web.1]:   app/controllers/main_controller.rb:6:in `experimentHome'
+2016-03-15T05:49:37.166166+00:00 app[web.1]: 
+2016-03-15T05:49:37.166166+00:00 app[web.1]: 
+2016-03-15T05:51:40.692387+00:00 heroku[router]: at=info method=GET path="/" host=sheltered-beach-44318.herokuapp.com request_id=4867e943-7dab-40d9-8944-a030c8977e39 fwd="128.12.253.5" dyno=web.1 connect=0ms service=12ms status=500 bytes=1458
+2016-03-15T05:51:40.699721+00:00 app[web.1]: Started GET "/" for 128.12.253.5 at 2016-03-15 05:51:40 +0000
+2016-03-15T05:51:40.700884+00:00 app[web.1]: Processing by MainController#experimentHome as HTML
+2016-03-15T05:51:40.706934+00:00 app[web.1]: PG::UndefinedTable: ERROR:  relation "experimentInfo" does not exist
+2016-03-15T05:51:40.706951+00:00 app[web.1]:                                        ^
+2016-03-15T05:51:40.706942+00:00 app[web.1]: LINE 1: SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expI...
+2016-03-15T05:51:40.707848+00:00 app[web.1]: Completed 500 Internal Server Error in 7ms
+2016-03-15T05:51:40.706953+00:00 app[web.1]: : SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expId != 'expId')
+2016-03-15T05:51:40.710357+00:00 app[web.1]: 
+2016-03-15T05:51:40.707677+00:00 app[web.1]:   Rendered main/experimentHome.html.erb within layouts/application (6.0ms)
+2016-03-15T05:51:40.710386+00:00 app[web.1]: ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "experimentInfo" does not exist
+2016-03-15T05:51:40.710387+00:00 app[web.1]: LINE 1: SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expI...
+2016-03-15T05:51:40.710388+00:00 app[web.1]:                                        ^
+2016-03-15T05:51:40.710388+00:00 app[web.1]: : SELECT "experimentInfo".* FROM "experimentInfo"  WHERE (expId != 'expId')):
+2016-03-15T05:51:40.710389+00:00 app[web.1]:      7: 	<%= @mexpMessage %>
+2016-03-15T05:51:40.710391+00:00 app[web.1]:      8: 	<div class="alert alert-warning" style = "color:black" align = "left"><%= "To begin browsing the database, click on one of the experiments listed below.  You can find information about each experiment listed in the blue boxes below each experiment link.  To download the raw data for a given experiment, click the link next to the 'Click to download' field." %></div>
+2016-03-15T05:51:40.710392+00:00 app[web.1]:      9: 	<h4> List of Experiments: </h4> 
+2016-03-15T05:51:40.710393+00:00 app[web.1]:     10: 	<% @experimentList.each do |e| %>
+2016-03-15T05:51:40.710393+00:00 app[web.1]:     11: 		<%= link_to e.title, search_path(:selectexp => e.expId) %>
+2016-03-15T05:51:40.710394+00:00 app[web.1]:     12: 		</a>
+2016-03-15T05:51:40.710395+00:00 app[web.1]:     13: 		<div class="alert alert-info">
+2016-03-15T05:51:40.710396+00:00 app[web.1]:   app/views/main/experimentHome.html.erb:10:in `block in _app_views_main_experiment_ome_html_erb___1511755932124521423_70162519516940'
+2016-03-15T05:51:40.710397+00:00 app[web.1]:   app/views/main/experimentHome.html.erb:1:in `_app_views_main_experiment_ome_html_erb___1511755932124521423_70162519516940'
+2016-03-15T05:51:40.710399+00:00 app[web.1]: 
+2016-03-15T05:51:40.710398+00:00 app[web.1]:   app/controllers/main_controller.rb:6:in `experimentHome'
+2016-03-15T05:51:40.710400+00:00 app[web.1]: 
