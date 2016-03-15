@@ -1,15 +1,15 @@
 class Experimentinfo < ActiveRecord::Migration
 	def change
 		create_table:experimentinfo do |t|
-			t.integer :expId
-			t.string :expType
+			t.integer :expid
+			t.string :exptype
 			t.string :researcher
 			t.string :description
 			t.string :title
-			t.string :timeFormat
+			t.string :timeformat
 			t.string :markers
-			t.string :cellLine
-			t.string :excelName	
+			t.string :cellline
+			t.string :excelname	
 		end
 	end
 end
