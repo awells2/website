@@ -1,6 +1,6 @@
 class Experimentinfo < ActiveRecord::Migration
 	def change
-		create_table: experimentinfo do |t|
+		create_table:experimentinfo do |t|
 			t.integer :expId
 			t.string :expType
 			t.string :researcher
@@ -10,7 +10,6 @@ class Experimentinfo < ActiveRecord::Migration
 			t.string :markers
 			t.string :cellLine
 			t.string :excelName	
- 
 		end
 	end
 end
