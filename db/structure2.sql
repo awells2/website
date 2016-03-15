@@ -6,7 +6,7 @@ drop table if exists mCherryRed;
 drop table if exists experimentInfo;
 
 create table experimentinfo (
-expid int,
+expid text,
 exptype text,
 researcher text,
 descripton text,
