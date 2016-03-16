@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require_tree 
-//=require highcharts-rails
+//=require highcharts
+//=require sand-signika.js
 
