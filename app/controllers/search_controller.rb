@@ -13,6 +13,8 @@ class SearchController < ApplicationController
 		@cmpName4 = params[:cmpName4]
 
 		@cmpSubstr = params[:cmpSubstr]
+		@pathSubstr = params[:pathSubstr]
+		@tarSubstr = params[:tarSubstr]
 
 		if(@cmpName1 == "" || @cmpName1 == nil)
 			@cmpName1 = params[:currCmpName]

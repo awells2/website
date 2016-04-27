@@ -12,9 +12,13 @@ class DataController < ApplicationController
     	@cmpName4 = params[:cmpName4]
 
     	@cmpSubstr = params[:cmpSubstr]
-		if @cmpSubstr != ""
-			redirect_to :action => 'search', :cmpSubstr => @cmpSubstr, :controller => 'search', :cmpName1 => @cmpName1,
-						:cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4=> @cmpName4, :selectexp => @expId
+    	@pathSubstr = params[:pathSubstr]
+    	@tarSubstr = params[:tarSubstr]
+
+		if @cmpSubstr != "" or @pathSubstr != "" or @tarSubstr != ""
+			redirect_to :action => 'search', :cmpSubstr => @cmpSubstr, :pathSubstr => @pathSubstr, :tarSubstr => @tarSubstr,
+						 :controller => 'search', :cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, 
+						 :cmpName4=> @cmpName4, :selectexp => @expId
 			return
 		end
 
