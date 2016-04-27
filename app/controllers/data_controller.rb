@@ -4,7 +4,7 @@ class DataController < ApplicationController
 	def graph
 		@cmpSearch = params[:cmpSearch]
 		if @cmpSearch != ""
-			redirect_to :action => 'search', :cmpSearch => @cmpSearch
+			redirect_to :action => 'search', :cmpSearch => @cmpSearch, :controller => 'search'
 		end
 
   		@expId = params[:expId]
