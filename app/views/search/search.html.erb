@@ -8,17 +8,20 @@ function checkvalue() {
     var count = 0;
     var cmpSearch = document.getElementById('cmpSubstr').value;
     if(cmpSearch.match(/\S/) && cmpSearch != ""){
-    	count = count + 1;
+    	return true;
+    	//count = count + 1;
     }
     var tarSearch = document.getElementById('tarSubstr').value;
   
     if(tarSearch.match(/\S/) && tarSearch != ""){
-    	count = count + 1;
+    	//count = count + 1;
+    	return true;
     }
     var pathSearch = document.getElementById('pathSubstr').value;
   
     if(pathSearch.match(/\S/) && pathSearch != ""){
-    	count = count + 1;
+    	//count = count + 1;
+    	return true;
     }
     var mystring1 = document.getElementById('cmpName1').value; 
     if(mystring1.match(/\S/)) {
