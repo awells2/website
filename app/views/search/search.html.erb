@@ -72,7 +72,7 @@ function doSomething(){
 				<%= link_to "Clear Search Criteria", search_path(:cmpName => "",:target => "",:pathway => "",:selectexp => @selectexp,:cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4)%>
 			</div>
 			<div>
-				Search for compound: <input type="text" name="cmpSearch" value = <%=@cmpSubstr%> onkeydown = "doSomething()"> <br>
+				Search for compound: <input type="text" name="cmpSearch" value = "<%=@cmpSubstr%>" onkeydown = "doSomething()"> <br>
 				<br>
   				Search for target: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="tarSearch" onkeydown = "doSomething()"><br>
   				<br>
