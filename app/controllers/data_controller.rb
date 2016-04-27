@@ -14,7 +14,7 @@ class DataController < ApplicationController
     	@cmpSubstr = params[:cmpSubstr]
 		if @cmpSubstr != ""
 			redirect_to :action => 'search', :cmpSubstr => @cmpSubstr, :controller => 'search', :cmpName1 => @cmpName1,
-						:cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4=> @cmpName4, :expId => @expId
+						:cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4=> @cmpName4, :selectexp => @expId
 			return
 		end
 
@@ -53,8 +53,7 @@ class DataController < ApplicationController
 			timeFormat1 = Experiment.where('expId = ?', @expId).pluck(:timeFormat).join("-")
 			timeInterval1 = timeFormat1.split('<>')[0].to_i
 			totalHrs1 = timeFormat1.split('<>')[1].to_i
-			puts "asfafasdfasfdasdfasfdasfadsf"
-			puts timeInterval1
+			
 			numTimePoints1 = (totalHrs1/timeInterval1)
 
 			@timeArray1 = (0..totalHrs1).step(timeInterval1).to_a
