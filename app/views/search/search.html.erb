@@ -57,7 +57,7 @@ function doSomething(){
 
 			<h3> Search </h3> 
 
-			<div class="alert alert-warning" style = "color:black">Enter search criteria to browse the database.  Clicking on a "Target" or "Pathway" link restrict the compounds that appear in the first search parameter column to those with the corresponding attribute.  To reset these search criteria, click "Clear Search Criteria".  To clear all the textboxes containing compound names, click the "Clear All Compounds" link below the "Compound 4" field. </div>
+			<div class="alert alert-warning" style = "color:black"> <%= @cmpSearch%>Enter search criteria to browse the database.  Clicking on a "Target" or "Pathway" link restrict the compounds that appear in the first search parameter column to those with the corresponding attribute.  To reset these search criteria, click "Clear Search Criteria".  To clear all the textboxes containing compound names, click the "Clear All Compounds" link below the "Compound 4" field. </div>
 			<div class="form-group">
 	  			<input type="hidden" class="form-control" id="expId" name="expId" value= "<%= @selectexp %>" />
 			</div>
