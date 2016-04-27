@@ -76,7 +76,7 @@ function doSomething(){
   				<input type="text" name="cmpSearch" onkeydown = "if (event.keyCode ==13) document.getElementById('cmpBtn').click()"> 
   				<input type = "button" id = "cmpBtn" onclick = "doSomething()" > <br>
   				Search for target:
-  				<input type="text" name="tarSearch"><br>
+  				<input type="text" name="tarSearch" onkeydown = "doSomething()"><br>
   				Search for pathway
   				<input type="text" name="pathSearch"><br>
 			</div>
