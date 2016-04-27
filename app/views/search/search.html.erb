@@ -65,6 +65,10 @@ function checkvalue() {
 			<div class = "text">
 				<%= link_to "Clear Search Criteria", search_path(:cmpName => "",:target => "",:pathway => "",:selectexp => @selectexp,:cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4)%>
 			</div>
+			<div>
+				Search for compound:<br>
+  				<input type="text" name="cmpSearch"><br>
+			</div>
 			<br>
 			<p> Enter up to 4 compounds: </p>
 		
