@@ -7,15 +7,15 @@
 function checkvalue() { 
     var count = 0;
     var cmpSearch = document.getElementById('cmpSubstr').value;
-    if(cmpSearch.match(/\S/)){
+    if(cmpSearch.match(/\S/) && cmpSearch != ""){
     	count = count + 1;
     }
     var tarSearch = document.getElementById('tarSubstr').value;
-    if(tarSearch.match(/\S/)){
+    if(tarSearch.match(/\S/) && tarSearch != ""){
     	count = count + 1;
     }
     var pathSearch = document.getElementById('pathSubstr').value;
-    if(pathSearch.match(/\S/)){
+    if(pathSearch.match(/\S/) && pathSearch != ""){
     	count = count + 1;
     }
     var mystring1 = document.getElementById('cmpName1').value; 
