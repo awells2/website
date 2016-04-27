@@ -2,7 +2,7 @@ class DataController < ApplicationController
 	skip_before_filter :verify_authenticity_token 
 
 	def graph
-		@cmpSearch = params[:cmpSubstr]
+		@cmpSubstr = params[:cmpSubstr]
 		if @cmpSubstr != ""
 			redirect_to :action => 'search', :cmpSubstr => @cmpSubstr, :controller => 'search'
 			return
