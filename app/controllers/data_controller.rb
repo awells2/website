@@ -5,6 +5,7 @@ class DataController < ApplicationController
 		@cmpSearch = params[:cmpSearch]
 		if @cmpSearch != ""
 			redirect_to :action => 'search', :cmpSearch => @cmpSearch, :controller => 'search'
+			return
 		end
 
   		@expId = params[:expId]
