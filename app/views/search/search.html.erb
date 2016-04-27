@@ -67,7 +67,12 @@ function checkvalue() {
 			</div>
 			<div>
 				Search for compound:<br>
-  				<input type="text" name="cmpSearch"><br>
+  				<input type="text" name="cmpSearch" value = "<%=cmpSearch %>" onkeydown = "if (event.keyCode ==13) document.getElementById('btnSearch').click()"> 
+  				<input type = "button" id = "cmpBtn" value = 'search'>
+  				Search for target:<br>
+  				<input type="text" name="tarSearch" value = "<%=tarSearch %>"><br>
+  				Search for pathway
+  				<input type="text" name="pathSearch" value = "<%=pathSearch %>"><br>
 			</div>
 			<br>
 			<p> Enter up to 4 compounds: </p>
