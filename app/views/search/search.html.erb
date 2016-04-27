@@ -152,13 +152,15 @@ function doSomething(){
 			<div class = "col-md-5" style = "overflow:scroll; height: 850px">
 				<% iCount = 1 %>
 				<% @info.each do |c| %>
+					<%check = 0 %>
 					<% if @cmpSubstr != nil and @cmpSubstr != "" %>
-						<% if c.include? @cmpSubstr %>
-							(<%= iCount%>)&nbsp;&nbsp;<%= link_to c, search_path(:currCmpName =>c,:target =>@target,:pathway => @pathway, :selectexp => @selectexp, :cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4) %><br>
-							<% iCount = iCount + 1 %>
-						<%end %>
-					<% end %> 
-				<% end %>
+					<%check = 1 %>
+					<%end %>
+					<% if c.include? @cmpSubstr or check == 1%>
+						(<%= iCount%>)&nbsp;&nbsp;<%= link_to c, search_path(:currCmpName =>c,:target =>@target,:pathway => @pathway, :selectexp => @selectexp, :cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4) %><br>
+						<% iCount = iCount + 1 %>
+					<%end %>
+				<%end %> 
 			</div>
 			<div class = "col-md-4" style = "overflow:scroll; height: 850px">
 				<% tCount = 1 %>
