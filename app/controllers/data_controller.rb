@@ -17,7 +17,7 @@ class DataController < ApplicationController
 						:cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4=> @cmpName4
 			return
 		end
-
+		puts "2309823409182340-1840-1841-0943810-93"
     	@cmpCount = 0
     	if(@cmpName1 != nil and @cmpName1 != "")
     		@cmpCount = @cmpCount + 1
