@@ -72,10 +72,10 @@ function doSomething(){
 				<%= link_to "Clear Search Criteria", search_path(:cmpName => "",:target => "",:pathway => "",:selectexp => @selectexp,:cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4)%>
 			</div>
 			<div>
-				Search for compound:<br>
+				Search for compound:
   				<input type="text" name="cmpSearch" onkeydown = "if (event.keyCode ==13) document.getElementById('cmpBtn').click()"> 
-  				<input type = "button" id = "cmpBtn" onclick = "doSomething()" >
-  				Search for target:<br>
+  				<input type = "button" id = "cmpBtn" onclick = "doSomething()" > <br>
+  				Search for target:
   				<input type="text" name="tarSearch"><br>
   				Search for pathway
   				<input type="text" name="pathSearch"><br>
