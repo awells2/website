@@ -78,9 +78,9 @@ function doSomething(){
 			<div>
 				Search for compound: <input type="text" name="cmpSubstr" value = "<%=@cmpSubstr%>" onkeydown = "if (event.keyCode == 13) document.getElementById('submitBtn').click()"> <br>
 				<br>
-  				Search for target: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="tarSearch" value = "<%= @tarSubstr %>" onkeydown = "if (event.keyCode == 13) document.getElementById('submitBtn').click()"><br>
+  				Search for target: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="tarSubstr" value = "<%= @tarSubstr %>" onkeydown = "if (event.keyCode == 13) document.getElementById('submitBtn').click()"><br>
   				<br>
-  				Search for pathway: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="pathSearch" value = "<%= @pathSubstr%>" onkeydown = "if (event.keyCode == 13) document.getElementById('submitBtn').click()"><br>
+  				Search for pathway: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="pathSubstr" value = "<%= @pathSubstr%>" onkeydown = "if (event.keyCode == 13) document.getElementById('submitBtn').click()"><br>
 			</div>
 			<br>
 			<p> Enter up to 4 compounds: </p>
