@@ -17,7 +17,7 @@ class DataController < ApplicationController
 						:cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4=> @cmpName4
 			return
 		end
-		puts "2309823409182340-1840-1841-0943810-93"
+
     	@cmpCount = 0
     	if(@cmpName1 != nil and @cmpName1 != "")
     		@cmpCount = @cmpCount + 1
@@ -53,6 +53,8 @@ class DataController < ApplicationController
 			timeFormat1 = Experiment.where('expId = ?', @expId).pluck(:timeFormat).join("-")
 			timeInterval1 = timeFormat1.split('<>')[0].to_i
 			totalHrs1 = timeFormat1.split('<>')[1].to_i
+			puts "asfafasdfasfdasdfasfdasfadsf"
+			puts timeInterval1
 			numTimePoints1 = (totalHrs1/timeInterval1)
 
 			@timeArray1 = (0..totalHrs1).step(timeInterval1).to_a
