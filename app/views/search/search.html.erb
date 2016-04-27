@@ -178,12 +178,14 @@ function doSomething(){
 							(<%= tCount %>)&nbsp;&nbsp; <%= link_to t, search_path(:target =>t,:pathway => @pathway, :selectexp => @selectexp, :cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4) %><br>
 							<% tCount = tCount + 1 %>
 						<%end %>
+					<%end%>
 				<% else %>
 					<% tCount = 1 %>
 					<% @targetsParsed.each do |t| %>
 						(<%= tCount %>)&nbsp;&nbsp; <%= link_to t, search_path(:target =>t,:pathway => @pathway, :selectexp => @selectexp, :cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4) %><br>
 						<% tCount = tCount + 1 %>
-				<% end %>
+					<% end %>
+				<%end%>
 			</div>	
 			<div class = "col-md-3">
 				<%if @pathSubstr != nil and @pathSubstr != "" %>
@@ -193,12 +195,14 @@ function doSomething(){
 							(<%= pCount %>)&nbsp;&nbsp;<%= link_to p, search_path(:pathway =>p, :target => @target, :selectexp => @selectexp, :cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4) %><br>
 							<% pCount = pCount + 1 %>
 						<%end%>
+					<%end%>
 				<%else%>
 					<% pCount = 1 %>
 					<% @pathways.each do |p| %>
 						(<%= pCount %>)&nbsp;&nbsp;<%= link_to p, search_path(:pathway =>p, :target => @target, :selectexp => @selectexp, :cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4) %><br>
 						<% pCount = pCount + 1 %>
 					<% end %>
+				<%end%>
 				</div>
 			</div>
 		</div>
