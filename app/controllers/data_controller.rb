@@ -14,7 +14,7 @@ class DataController < ApplicationController
     	@cmpSubstr = params[:cmpSubstr]
 		if @cmpSubstr != ""
 			redirect_to :action => 'search', :cmpSubstr => @cmpSubstr, :controller => 'search', :cmpName1 => @cmpName1,
-						:cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4=> @cmpName4
+						:cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4=> @cmpName4, :expId => @expId
 			return
 		end
 
