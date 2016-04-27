@@ -12,7 +12,7 @@ class SearchController < ApplicationController
 		@cmpName3 = params[:cmpName3]
 		@cmpName4 = params[:cmpName4]
 
-		@cmpSubstr = ""
+		@cmpSubstr = params[:cmpSubstr]
 
 		if(@cmpName1 == "" || @cmpName1 == nil)
 			@cmpName1 = params[:currCmpName]
