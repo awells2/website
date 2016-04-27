@@ -5,20 +5,18 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 <script type = "text/javascript">
 function checkvalue() { 
-	alert("HERE")
     var count = 0;
     var cmpSearch = document.getElementById('cmpSubstr').value;
-    alert(cmpSearch);
     if(cmpSearch.match(/\S/) && cmpSearch != ""){
     	count = count + 1;
     }
     var tarSearch = document.getElementById('tarSubstr').value;
-    alert(tarSearch);
+  
     if(tarSearch.match(/\S/) && tarSearch != ""){
     	count = count + 1;
     }
     var pathSearch = document.getElementById('pathSubstr').value;
-    alert(pathSearch);
+  
     if(pathSearch.match(/\S/) && pathSearch != ""){
     	count = count + 1;
     }
