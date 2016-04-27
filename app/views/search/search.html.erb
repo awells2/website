@@ -72,7 +72,7 @@ function doSomething(){
 				<%= link_to "Clear Search Criteria", search_path(:cmpName => "",:target => "",:pathway => "",:selectexp => @selectexp,:cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4)%>
 			</div>
 			<div>
-				Search for compound: <input type="text" name="cmpSearch" onkeydown = "doSomething()"> <br>
+				Search for compound: <input type="text" name="cmpSearch" value = <%=@cmpSubstr%> onkeydown = "doSomething()"> <br>
 				<br>
   				Search for target: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="tarSearch" onkeydown = "doSomething()"><br>
   				<br>
@@ -148,8 +148,10 @@ function doSomething(){
 			<div class = "col-md-5" style = "overflow:scroll; height: 850px">
 				<% iCount = 1 %>
 				<% @info.each do |c| %>
-					(<%= iCount%>)&nbsp;&nbsp;<%= link_to c, search_path(:currCmpName =>c,:target =>@target,:pathway => @pathway, :selectexp => @selectexp, :cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4) %><br>
-					<% iCount = iCount + 1 %>
+					<% if c.include? @cmpSubstr %>
+						(<%= iCount%>)&nbsp;&nbsp;<%= link_to c, search_path(:currCmpName =>c,:target =>@target,:pathway => @pathway, :selectexp => @selectexp, :cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4) %><br>
+						<% iCount = iCount + 1 %>
+					<%end %>
 				<% end %>
 			</div>
 			<div class = "col-md-4" style = "overflow:scroll; height: 850px">
