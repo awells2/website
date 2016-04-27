@@ -89,11 +89,11 @@ function doSomething(){
 				<%= link_to "Clear Search Criteria", search_path(:cmpName => "",:target => "",:pathway => "",:selectexp => @selectexp,:cmpName1 => @cmpName1, :cmpName2 => @cmpName2, :cmpName3 => @cmpName3, :cmpName4 => @cmpName4)%>
 			</div>
 			<div>
-				Search for compound: <input type="text" name="cmpSubstr" value = "<%=@cmpSubstr%>" onkeydown = "if (event.keyCode == 13) document.getElementById('submitBtn').click()"> <br>
+				Search for compound: <input type="text" name="cmpSubstr" id = "cmpSubstr" value = "<%=@cmpSubstr%>" onkeydown = "if (event.keyCode == 13) document.getElementById('submitBtn').click()"> <br>
 				<br>
-  				Search for target: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="tarSubstr" value = "<%= @tarSubstr %>" onkeydown = "if (event.keyCode == 13) document.getElementById('submitBtn').click()"><br>
+  				Search for target: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="tarSubstr" id = "tarSubstr" value = "<%= @tarSubstr %>" onkeydown = "if (event.keyCode == 13) document.getElementById('submitBtn').click()"><br>
   				<br>
-  				Search for pathway: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="pathSubstr" value = "<%= @pathSubstr%>" onkeydown = "if (event.keyCode == 13) document.getElementById('submitBtn').click()"><br>
+  				Search for pathway: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="pathSubstr" id = "pathSubstr"value = "<%= @pathSubstr%>" onkeydown = "if (event.keyCode == 13) document.getElementById('submitBtn').click()"><br>
 			</div>
 			<br>
 			<p> Enter up to 4 compounds: </p>
