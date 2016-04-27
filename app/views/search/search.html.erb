@@ -1,5 +1,5 @@
 <%content_for :content do%>
-<form method="POST" action="search" role="form" style="max-width:1000px; width:100%" onsubmit = " return checkvalue()">
+<!--<form method="POST" action="search" role="form" style="max-width:1000px; width:100%" onsubmit = " return checkvalue()">-->
 
 
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
@@ -83,6 +83,7 @@ function doSomething(){
   				Search for pathway: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="pathSearch"><br>
 			</div>
 			<br>
+<form method="POST" action="search" role="form" style="max-width:1000px; width:100%" onsubmit = " return checkvalue()">
 			<p> Enter up to 4 compounds: </p>
 		
 			<% if @message != "" %>
