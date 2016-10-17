@@ -88,7 +88,7 @@ class DataController < ApplicationController
 			if (marker_array.include?('NLS') and marker_array.include?('Sytox Green'))
 				cle_scores_array = calculate_cle_score(Sytox.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>"),NLS.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>"))
 				@array1[@array1.length] = cle_scores_array
-				@markers1 = @markers1 + ",CLE Score"
+				@markers1 = @markers1 + ",Lethal Fraction"
 				@numMarkers1 = @numMarkers1 + 1
 			end
 			@map1 = Hash.new
