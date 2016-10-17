@@ -10,10 +10,11 @@
 	<% @experimentList.each do |e| %>
 		<%= link_to e.title, search_path(:selectexp => e.expid) %>
 		</a>
-		<div class="alert alert-info">
+		<div class="alert alert-info" style="width:500px">
 			<!--<p style = "color:black"> Researcher: <%=e.researcher %> </p>-->
 			<!--<p style = "color:black">Title: <%=e.title %> </p>--> 
-			<p style = "color:black"> Description: <%= e.descripton%></p>
+			<!--<p style = "color:black"> Description: <%= e.descripton%></p>-->
+			<p style - "color:black"> Description: T98G^N cells treated with temozolomide (400 micomolar) and a library of 1,833 bioactive small molecules (5 micromolar) </p>
 			<p style = "color:black"> Base cell line: <a href = "http://cancer.sanger.ac.uk/cosmic/sample/overview?id=2491103" target = "_blank">T98G^N</a></p>
 			<p style = "color:black">Click to download:  <%= link_to e.excelname, download_xls_path(e.excelname) %> </p>
 		</div>
