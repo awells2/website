@@ -159,7 +159,7 @@ class DataController < ApplicationController
 			if (marker_array.include?('NLS') and marker_array.include?('Sytox Green'))
 				cle_scores_array = calculate_cle_score(Sytox.where('compoundName = ? and expId = ?', @cmpName2, @expId).pluck(:data).join("<>"),NLS.where('compoundName = ? and expId = ?', @cmpName2, @expId).pluck(:data).join("<>"))
 				@array2[@array2.length] = cle_scores_array
-				@markers2 = @markers2 + ",CLE Score"
+				@markers2 = @markers2 + ",Lethal Fraction"
 				@numMarkers2 = @numMarkers2 + 1
 			end
 
@@ -233,7 +233,7 @@ class DataController < ApplicationController
 			if (marker_array.include?('NLS') and marker_array.include?('Sytox Green'))
 				cle_scores_array = calculate_cle_score(Sytox.where('compoundName = ? and expId = ?', @cmpName3, @expId).pluck(:data).join("<>"),NLS.where('compoundName = ? and expId = ?', @cmpName3, @expId).pluck(:data).join("<>"))
 				@array3[@array3.length] = cle_scores_array
-				@markers3 = @markers3 + ",CLE Score"
+				@markers3 = @markers3 + ",Lethal Fraction"
 				@numMarkers3 = @numMarkers3 + 1
 			end
 
@@ -308,7 +308,7 @@ class DataController < ApplicationController
 			if (marker_array.include?('NLS') and marker_array.include?('Sytox Green'))
 				cle_scores_array = calculate_cle_score(Sytox.where('compoundName = ? and expId = ?', @cmpName4, @expId).pluck(:data).join("<>"),NLS.where('compoundName = ? and expId = ?', @cmpName4, @expId).pluck(:data).join("<>"))
 				@array4[@array4.length] = cle_scores_array
-				@markers4 = @markers4 + ",CLE Score"
+				@markers4 = @markers4 + ",Lethal Fraction"
 				@numMarkers4 = @numMarkers4 + 1
 			end
 
