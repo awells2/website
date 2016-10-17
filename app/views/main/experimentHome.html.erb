@@ -5,7 +5,7 @@
 <h4> List of Experiments: </h4> 
 <form method="POST" action="experiments" style="max-width:400px; width:100%">
 	<%= @mexpMessage %>
-	<div class="alert alert-warning" style = "color:black" align = "left"><%= "To begin browsing the database, click on one of the experiments listed below.  You can find information about each experiment listed in the blue boxes below each experiment link.  To download the raw data for a given experiment, click the link next to the 'Click to download' field." %></div>
+	<div class="alert alert-warning" style = "color:black" align = "left"><%= "Hello! Ever wonder about the kinetics of cell death in response to small molecule perturbation? Here you can visualize the response of human cancer cell populations over time following treatment with various cytotoxic and non-cytotoxic small molecules. These data were collected using large-scale, time-lapse imaging of human cancer cells expressing nuclear-localized mKate2 (referred to as ^N, below) and incubated in medium containing Sytox Green, as described in the forthcoming paper by Forcina et al. The list of experiments, below, indicates which datasets are currently available. Click on a link to get started!" %></div>
 	<h4> List of Experiments: </h4> 
 	<% @experimentList.each do |e| %>
 		<%= link_to e.title, search_path(:selectexp => e.expid) %>
