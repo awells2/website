@@ -1,16 +1,15 @@
 <%content_for :content do%>
 <h3>Frequently Asked Questions</h3>
 <br>
-<h4> (1)  What does the Dixon Lab research? </h4>
-	<p> The overall question the Dixon Lab is researching is: How do cells die?  More specifically, the Dixon lab is 
-	interested in how changes in intracellular metabolism contributes to forms of apoptotic and non-apoptotic cell death.
-	This work has significant clinical applications, as the identification of novel drugs that can inhibit or activate various forms of cell death has the potential to help treat diseases such as cancer.  To learn more about the Dixon lab <a href = "http://www.dixonlaboratory.com/#dixonlab" target = "_blank">visit the Dixon Lab Website</a> </p>
 <br>
-<h4> (2) What is the Dixon Lab Database?</h4>
-	<p> The Dixon Lab database stores the data collected by various experiments conducted by current and former members of the Dixon Lab.  Many of these experiments use a library of 1,833 small molecules.  More information about each experiment can be found on the <%= link_to "the Experiments page", '/experiments',:method =>:get %>.</p> 
+<h4> (1) What is the Dixon Lab Cell Death Kinetics database?</h4>
+	<p> This database is a repository of cell viability data collected from cancer cells over time in response to small molecule perturbation. These measurements are described in the forthcoming paper by Forcina et al.  More information about each experiment can be found on the <%= link_to "the Experiments page", '/experiments',:method =>:get %>.</p> 
 <br>
-<h4> (3) How do I search the database? </h4>
+<h4> (2) How do I search the database? </h4>
 	<p>To begin your search, go to  <%= link_to "the Experiments page", '/experiments',:method =>:get %> and select the desired experiment.  This will naviage you to the Search page.  Listed under "Compounds" are the 1,833 small molecules used in the experiment.  Clicking on a field in the "Pathway" or "Targets" column will automatically query the 1,833 small molecules for those with the corresponding attributes.  To view data from the experiment, you may either click on a compound or manually enter the name of a compound used in the experiment.  Once you have entered between 1 and 4 compounds, click "Search the Dixon Lab Database!" to view the graphs.  </p>
+
+<h4> (3)  Contact/Further informaton</h4>
+	<p> For further information <a href = "http://www.dixonlaboratory.com/#dixonlab" target = "_blank">visit the Dixon Lab Website</a> </p>
 	
 </center>
 <% end -%>
