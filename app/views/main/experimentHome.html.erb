@@ -5,12 +5,12 @@
 <h4> List of Experiments: </h4> 
 <form method="POST" action="experiments" style="max-width:600px; width:100%">
 	<%= @mexpMessage %>
-	<div class="alert alert-warning" style = "color:black" align = "left"><%= "Hello! Ever wonder about the kinetics of cell death in response to small molecule perturbation? Here you can visualize the response of human cancer cell populations over time following treatment with various cytotoxic and non-cytotoxic small molecules. These data were collected using large-scale, time-lapse imaging of human cancer cells expressing nuclear-localized mKate2 (referred to as ^N, below) and incubated in medium containing Sytox Green, as described in the forthcoming paper by Forcina et al. The list of experiments, below, indicates which datasets are currently available. Click on a link to get started!" %></div>
+	<div class="alert alert-warning" style = "color:black style="width:600px" align = "left"><%= "Hello! Ever wonder about the kinetics of cell death in response to small molecule perturbation? Here you can visualize the response of human cancer cell populations over time following treatment with various cytotoxic and non-cytotoxic small molecules. These data were collected using large-scale, time-lapse imaging of human cancer cells expressing nuclear-localized mKate2 (referred to as ^N, below) and incubated in medium containing Sytox Green, as described in the forthcoming paper by Forcina et al. The list of experiments, below, indicates which datasets are currently available. Click on a link to get started!" %></div>
 	<h4> List of Experiments: </h4> 
 	<% @experimentList.each do |e| %>
 		<%= link_to e.title, search_path(:selectexp => e.expid) %>
 		</a>
-		<div class="alert alert-info">
+		<div class="alert alert-info" style: "width:400px">
 			<p style = "color:black"> Description: <%= e.descripton%></p>
 			<p style = "color:black"> Base cell line: <a href = "http://cancer.sanger.ac.uk/cosmic/sample/overview?id=2491103" target = "_blank">T98G^N</a></p>
 			<p style = "color:black">Click to download:  <%= link_to e.excelname, download_xls_path(e.excelname) %> </p>
