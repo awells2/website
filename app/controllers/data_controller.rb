@@ -61,8 +61,6 @@ class DataController < ApplicationController
 			numTimePoints1 = (totalHrs1/timeInterval1)
 
 			@timeArray1 = (0..totalHrs1+1).step(timeInterval1).to_a
-			print "HERE HERE HERE HERE HERE HERE"
-			print @timeArray1
 			#@array1 = Array.new(Array.new(numTimePoints1))
 			@array1 = Array.new
 	
@@ -71,6 +69,8 @@ class DataController < ApplicationController
 				case currMarker1
 				when 'Confluency'
 					dataString1 = Confluence.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>")
+					print "HERE HERE HERE HERE HERE HERE HERE HERE"
+					print dataString1
 				when 'Sytox Green'
 					dataString1 = Sytox.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>")
 				when 'NLS'
