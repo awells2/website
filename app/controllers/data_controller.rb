@@ -79,7 +79,8 @@ class DataController < ApplicationController
 				end
 			
 				innerArray1 = Array.new(numTimePoints1)
-				(1..numTimePoints1).each do |j|
+				#!!!!!!!!!!!!!!!!!!!!!
+				(0..numTimePoints1).each do |j|
 					innerArray1[j] = dataString1.split("<>")[j].to_f
 				end
 				@array1[i] = innerArray1
@@ -148,7 +149,8 @@ class DataController < ApplicationController
 				end
 			
 				innerArray2 = Array.new(numTimePoints2)
-				(1..numTimePoints2).each do |j|
+				#!!!!!!!!!!!!!!!!
+				(0..numTimePoints2).each do |j|
 					innerArray2[j] = dataString2.split("<>")[j].to_f
 				end
 				@array2[i] = innerArray2
@@ -222,7 +224,8 @@ class DataController < ApplicationController
 				end
 			
 				innerArray3 = Array.new(numTimePoints3)
-				(1..numTimePoints3).each do |j|
+				#!!!!!!!!!!!!!!!!!!
+				(0..numTimePoints3).each do |j|
 					innerArray3[j] = dataString3.split("<>")[j].to_f
 				end
 				@array3[i] = innerArray3
@@ -296,7 +299,8 @@ class DataController < ApplicationController
 				end
 			
 				innerArray4 = Array.new(numTimePoints4)
-				(1..numTimePoints4).each do |j|
+				#!!!!!!!!!!!!!!!!!!!!!!!!
+				(0..numTimePoints4).each do |j|
 					innerArray4[j] = dataString4.split("<>")[j].to_f
 				end
 				@array4[i] = innerArray4
