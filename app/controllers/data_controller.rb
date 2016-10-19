@@ -166,7 +166,7 @@ class DataController < ApplicationController
 			@map2 = Hash.new
 			(0..@numMarkers2).each do |j|
 				tempArr2 = @array2[j]
-				tempArr2.shift
+				#tempArr2.shift
 				@map2[@markers2.split(',')[j]] = tempArr2
 			end
 
@@ -241,7 +241,7 @@ class DataController < ApplicationController
 			@map3 = Hash.new
 			(0..@numMarkers3).each do |j|
 				tempArr3 = @array3[j]
-				tempArr3.shift
+				#tempArr3.shift
 				@map3[@markers3.split(',')[j]] = tempArr3
 			end
 
@@ -317,7 +317,7 @@ class DataController < ApplicationController
 			@map4 = Hash.new
 			(0..@numMarkers4).each do |j|
 				tempArr4 = @array4[j]
-				tempArr4.shift
+				#tempArr4.shift
 				@map4[@markers4.split(',')[j]] = tempArr4
 			end
 
