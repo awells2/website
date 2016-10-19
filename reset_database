@@ -8,5 +8,9 @@ heroku pg:psql << EOF
 \copy NLS FROM 'db/s2/S2_nls.csv' DELIMITER ',' CSV;
 \copy sytoxgreen FROM 'db/s2/S2_sg.csv' DELIMITER ',' CSV;
 \copy confluency FROM 'db/s2/S2_con.csv' DELIMITER ',' CSV;
+\copy experimentInfo FROM 'db/s4/s4_info.csv' DELIMITER ',' CSV;
+\copy NLS FROM 'db/s4/S4_nls.csv' DELIMITER ',' CSV;
+\copy sytoxgreen FROM 'db/s4/S4_sg.csv' DELIMITER ',' CSV;
+\copy confluency FROM 'db/s4/S4_con.csv' DELIMITER ',' CSV;
 \dt
 EOF
