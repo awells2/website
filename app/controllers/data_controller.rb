@@ -58,9 +58,9 @@ class DataController < ApplicationController
 			timeInterval1 = timeFormat1.split('<>')[0].to_i
 			totalHrs1 = timeFormat1.split('<>')[1].to_i
 			
-			numTimePoints1 = (totalHrs1/timeInterval1)+1
+			numTimePoints1 = (totalHrs1/timeInterval1)
 
-			@timeArray1 = (0..totalHrs1).step(timeInterval1).to_a
+			@timeArray1 = (0..totalHrs1+1).step(timeInterval1).to_a
 
 			#@array1 = Array.new(Array.new(numTimePoints1))
 			@array1 = Array.new
