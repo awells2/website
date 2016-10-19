@@ -61,7 +61,8 @@ class DataController < ApplicationController
 			numTimePoints1 = (totalHrs1/timeInterval1)
 
 			@timeArray1 = (0..totalHrs1+1).step(timeInterval1).to_a
-
+			print "HERE HERE HERE HERE HERE HERE"
+			print @timeArray1
 			#@array1 = Array.new(Array.new(numTimePoints1))
 			@array1 = Array.new
 	
