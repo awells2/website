@@ -69,8 +69,6 @@ class DataController < ApplicationController
 				case currMarker1
 				when 'Confluency'
 					dataString1 = Confluence.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>")
-					print "HERE HERE HERE HERE HERE HERE HERE HERE"
-					print dataString1
 				when 'Sytox Green'
 					dataString1 = Sytox.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>")
 				when 'NLS'
@@ -79,7 +77,7 @@ class DataController < ApplicationController
 					dataString1 = Cherry.where('compoundname = ? and expid = ?', @cmpName1, @expId).pluck(:data).join("<>")
 				end
 			
-				innerArray1 = Array.new(numTimePoints1)
+				innerArray1 = Array.new(numTimePoints1+1)
 				#!!!!!!!!!!!!!!!!!!!!!
 				(0..numTimePoints1).each do |j|
 					innerArray1[j] = dataString1.split("<>")[j].to_f
