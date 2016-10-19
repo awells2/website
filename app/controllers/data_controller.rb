@@ -94,10 +94,9 @@ class DataController < ApplicationController
 			@map1 = Hash.new
 			(0..@numMarkers1).each do |j|
 				tempArr1 = @array1[j]
-				tempArr1.shift
+				#tempArr1.shift
 				@map1[@markers1.split(',')[j]] = tempArr1
 			end
-			print("HERE")
 			print(@map1)
 			#respond_to do |format|
 			#	format.html

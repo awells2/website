@@ -31,8 +31,6 @@ $(function(){
     <% @map1.each do |name, arr| %>
         graphTitle = String('<%= name %>')
         dataVector = <%= arr %>
-	<% print "HERE HERE HERE" %>
-	<% print arr %>
         containerNum = 'container' + i
         yLabel = 'Count (1/mm^2)'
         if(graphTitle == 'Confluency'){
