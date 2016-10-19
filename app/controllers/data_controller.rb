@@ -82,8 +82,6 @@ class DataController < ApplicationController
 				(0..numTimePoints1).each do |j|
 					innerArray1[j] = dataString1.split("<>")[j].to_f
 				end
-				print "HERE HERE HERE HERE HERE HERE HERE"
-				print innerArray1
 				@array1[i] = innerArray1
 			end
 			marker_array = @markers1.split(',')
