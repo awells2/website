@@ -60,6 +60,7 @@ class SearchController < ApplicationController
 		
 		if(@target != "Any" and @pathway =="Any")
 			@info = Info.where('compoundName != ? and compoundName != ? and targetsEdited LIKE ?','Empty','Compound',@target).order(:compoundName).pluck(:compoundName)
+			puts @info
 			@targets = Info.where('compoundName != ? and compoundName != ?','Empty','Compound').order(:targetsEdited).pluck(:targetsEdited).uniq
 			@targetsParsed = []
 			@targets.each do |t|
