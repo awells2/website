@@ -61,6 +61,8 @@ class SearchController < ApplicationController
 		if(@target != "Any" and @pathway =="Any")
 			@info = Info.where('compoundName != ? and compoundName != ? and targetsEdited LIKE ?','Empty','Compound',@target.strip).order(:compoundName).pluck(:compoundName)
 			@targets = Info.where('compoundName != ? and compoundName != ?','Empty','Compound').order(:targetsEdited).pluck(:targetsEdited).uniq
+			print "HERE HERE HERE HERE HERE "
+			print @targets
 			@targetsParsed = []
 			@targets.each do |t|
 				if(t != nil)
@@ -81,8 +83,6 @@ class SearchController < ApplicationController
 
 		if (@pathway != "Any" and @target =="Any")
 			@info = Info.where('compoundName != ? and compoundName != ? and pathway = ?','Empty','Compound',@pathway).order(:compoundName).pluck(:compoundName)
-			print "HERE HER EHERE"
-			print @info
 			@targets = Info.where('compoundName != ? and compoundName != ? and pathway = ?','Empty','Compound',@pathway).order(:targetsEdited).pluck(:targetsEdited).uniq
 			@targetsParsed = []
 			@targets.each do |t|
